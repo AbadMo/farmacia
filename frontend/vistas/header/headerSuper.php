@@ -1,3 +1,16 @@
+<?php
+    require_once '../../../backend/crud/usuarioscrud.php';
+
+    $datos = new user;
+    $user = $datos->getUserByEmail($_SESSION['user']['email']);
+    $img = $user['imagen'];
+
+    if($img == null){
+        $ruta = '../../../backend/images/none.png';
+    }else{
+        $ruta = "../../../backend/images/$img";
+    }
+?>
 <!DOCTYPE html>
 
 <html lang="en">
@@ -51,9 +64,12 @@
                 </li>
             </ul>
             <a class="navbar-brand hidden-md-down text-white">Supervisor   <?php print("  (" . $_SESSION['user']['nombre']. ") ")?></a>
+            <li class="mt-2">
+                    <img src="<?php echo $ruta?>" width="50" height="50">
+            </li> 
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Cuenta</a>
+                    <a class="nav-link" href="../cuenta/micuenta.php">Cuenta</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="../../../backend/login/cerrar_sesion.php">Cerrar Sesion</a>

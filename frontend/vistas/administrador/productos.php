@@ -28,7 +28,7 @@
     include_once '../header/headerAdmin.php';
 ?>
 
-<div class="container p-4" >
+<div class="container-fluid p-4" >
    
    <div class="row">
        

@@ -41,9 +41,9 @@
         ]);
         
         var options = {
-            title: 'Usuarios por Rol',
-            width: 900,
-            height: 500,
+            title: 'USUARIOS',
+            width: 500,
+            height: 350,
         };
         
         var chart = new google.visualization.PieChart(document.getElementById('UsuariosRol'));
@@ -63,9 +63,9 @@
         ]);
 
         var options = {
-            title: 'Cantidad de productos vendidos',
-            width: 900,
-            height: 500,
+            title: 'PRODUCTOS VENDIDOS',
+            width: 500,
+            height: 350,
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('VentasbyProducto'));

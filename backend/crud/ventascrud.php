@@ -8,9 +8,10 @@
         }
 
         public function getVentas(){
-            $ventas = $this->db->query("SELECT p.nombre AS PRODUCTO, sum(dv.cantidad) AS CANTIDAD_VENDIDA FROM 
-                                        productos AS p INNER JOIN detalle_venta AS dv ON p.idProductos = dv.idProductos 
-                                        INNER JOIN ventas ON ventas.idVentas = dv.idVentas GROUP BY dv.idProductos"); 
+            $ventas= $this->db->query(" SELECT sum(dv.cantidad) AS CANTIDAD_VENDIDA, p.nombre
+                                        AS  PRODUCTO FROM detalle_venta dv 
+                                        INNER JOIN productos p 
+                                        ON dv.idProductos = p.idProductos GROUP BY PRODUCTO");
 
             return $ventas->fetchall();
         }

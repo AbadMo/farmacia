@@ -26,12 +26,11 @@
     include_once '../header/headerAdmin.php';
 ?>
 
-<div class="container p-4" >
+<div class="container-fluid p-4" >
    
    <div class="row">
 
-   <div class="col-3">
-    </div>
+   <div class="col-3"></div>
 
        <div class="col-6"> 
 
@@ -58,7 +57,7 @@
                    </select>     
                    </br>
                    <select name="activo"  class="form-control">
-                       <option value=""><?php echo ($res['ACTIVO'] ? 'Activo': 'Inactivo') ?></option>
+                       <option value="<?php echo $res['ACTIVO']?>"><?php echo ($res['ACTIVO'] ? 'Activo': 'Inactivo') ?></option>
                             <?php if($res['ACTIVO']):?>
                                 <option value="0">Inactivo</option>
                             <?php else:?>
@@ -80,8 +79,7 @@
             </div>
         </div>
     
-    <div class="col-3">
-    </div>
+    <div class="col-3"></div>
 
 </div>
 </body>

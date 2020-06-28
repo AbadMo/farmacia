@@ -38,6 +38,14 @@
 
         }
      
+        public function getUserByEmail($email){
+            $sql = "SELECT * FROM usuarios  WHERE email = ?";
+            $query = $this->db->prepare($sql);
+            $query->bindParam(1,$email);
+            $query->execute();
+            return $query->fetch();
+        }
+
         public function getUsersId($email){
 
             $user = $this->db->query("  SELECT email, nombre, password, idRoles  
@@ -114,6 +122,18 @@
             $consulta->execute();
 
             return $consulta->rowCount();
+        }
+
+        public function setAcountUser($nombre, $email, $image, $id){
+            $sql = "UPDATE usuarios SET nombre = ?, email = ?, imagen = ? WHERE idUsuarios = ? ";
+            $query = $this->db->prepare($sql);
+            $query->bindParam(1, $nombre);
+            $query->bindParam(2, $email);
+            $query->bindParam(3, $image);
+            $query->bindParam(4, $id);          
+            $query->execute();
+            
+            return $query->rowCount();
         }
 
     }

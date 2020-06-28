@@ -24,7 +24,7 @@
 
 ?>
 
-<div class="container p-4" >
+<div class="container-fluid p-4" >
    
    <div class="row">
 
@@ -37,7 +37,7 @@
                 <h4> Modificar Proveedor </h4> 
                <form action="../../../backend/crud/updatebackproveedor.php?id=<?php echo $id?>" method="POST"> 
 
-               <div >
+                    <div >
                        <input type="text" name="nombre" class="form-control" value="<?php echo $recordSetProveedor['nombre']?>" autofocus>   
                    </div>
                     </br>

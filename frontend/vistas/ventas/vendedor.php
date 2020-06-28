@@ -36,7 +36,6 @@
                         <option value="<?php echo $m['idMarcas']?>"><?php echo $m['nombre']?></option>
                         <?php endforeach;?>
                     </select>
-
                 </div>
             </div>
 

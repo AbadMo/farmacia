@@ -11,28 +11,21 @@
 
        if($rol != null && $email != null && $nombre != null){
             $update = new user();
-            $count = $update->searchEmail($email);
+            //$count = $update->searchEmail($email);
 
-            if($count[0]==0){
-                if($update->updateUsers($id, $rol, $nombre, $email, $act)==1){
-                    $_SESSION['UserAdd'] = 'Usuario Actualizado'; 
-                    $_SESSION['UserAddType'] = 'success';
-                }else{
-                    $_SESSION['UserAdd'] = 'Datos no actualizados'; 
-                    $_SESSION['UserAddType'] = 'warning';
-                }
+            //if($count[0]==0){
+            if($update->updateUsers($id, $rol, $nombre, $email, $act)==1){
+                $_SESSION['UserAdd'] = 'Usuario Actualizado'; 
+                $_SESSION['UserAddType'] = 'success';
             }else{
-                $_SESSION['UserAdd'] = 'Email ya existe'; 
-                $_SESSION['UserAddType'] = 'danger';                
+                $_SESSION['UserAdd'] = 'Datos no actualizados'; 
+                $_SESSION['UserAddType'] = 'warning';
             }
-
        }else{
         $_SESSION['UserAdd'] = 'Faltan datos';
         $_SESSION['UserAddType'] = 'danger'; 
        } 
-
        header('Location:../../frontend/vistas/administrador/usuarios.php');
-
    } 
 
 ?>
